@@ -11,12 +11,12 @@ To use the script on the NanoPi, transfer the wlan-client-capability.py script t
 SSH to the NanoPi, kill a few troublesome processes, place the wireless NIC on the channel you wish to monitor using airodump-ng and then run the script:
 
 ```
-wlanpi@wlanpi:~/python$ sudo -s
+wlanpi@wlanpi:~/wlan-client-capability$ sudo -s
 [sudo] password for wlanpi: 
-root@wlanpi:/home/wlanpi/python#
-root@wlanpi:/home/wlanpi/python# airmon-ng check kill   (Note: you WILL have issues if you don;t run this)
-root@wlanpi:/home/wlanpi/python# airodump-ng wlan0 -c 48   (Specify channel required with '-c'. Kill with ctlr-c once running)
-root@wlanpi:/home/wlanpi/python# ./wlan-client-capability.py -c wlan0 any
+root@wlanpi:/home/wlanpi/wlan-client-capability#
+root@wlanpi:/home/wlanpi/wlan-client-capability# airmon-ng check kill   (Note: you WILL have issues if you don;t run this)
+root@wlanpi:/home/wlanpi/wlan-client-capability# airodump-ng wlan0 -c 48   (Specify channel required with '-c'. Kill with ctlr-c once running)
+root@wlanpi:/home/wlanpi/wlan-client-capability# ./wlan-client-capability.py -c wlan0 any
 
 ```
 ## Usage
