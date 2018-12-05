@@ -11,12 +11,12 @@ To use the script on the NanoPi, transfer the wlan-client-capability.py script t
 SSH to the NanoPi, kill a few troublesome processes, place the wireless NIC on the channel you wish to monitor using airodump-ng and then run the script:
 
 ```
-wlanpi@wlanpi:~/python$ sudo -s
+wlanpi@wlanpi:~/wlan-client-capability$ sudo -s
 [sudo] password for wlanpi: 
-root@wlanpi:/home/wlanpi/python#
-root@wlanpi:/home/wlanpi/python# airmon-ng check kill   (Note: you WILL have issues if you don;t run this)
-root@wlanpi:/home/wlanpi/python# airodump-ng wlan0 -c 48   (Specify channel required with '-c'. Kill with ctlr-c once running)
-root@wlanpi:/home/wlanpi/python# ./wlan-client-capability.py -c wlan0 any
+root@wlanpi:/home/wlanpi/wlan-client-capability#
+root@wlanpi:/home/wlanpi/wlan-client-capability# airmon-ng check kill   (Note: you WILL have issues if you don;t run this)
+root@wlanpi:/home/wlanpi/wlan-client-capability# airodump-ng wlan0 -c 48   (Specify channel required with '-c'. Kill with ctlr-c once running)
+root@wlanpi:home/wlanpi/wlan-client-capability# ./wlan_client_capability.py -c wlan0 any
 
 ```
 ## Usage
@@ -24,27 +24,27 @@ root@wlanpi:/home/wlanpi/python# ./wlan-client-capability.py -c wlan0 any
 ```
  Usage:
 
-    wlan-client-capability.py -f <filename>
-    wlan-client-capability.py -c <mon interface> < client_mac | any >
+    wlan_client_capability.py -f <filename>
+    wlan_client_capability.py -c <mon interface> < client_mac | any >
  
  ```
 ### Examples:
 
 ```
 # capture frame for client aa:bb:cc:dd:ee:ff on interface wlan0
-root@wlanpi:/home/wlanpi/python# wlan-client-capability.py -c wlan0 aa:bb:cc:dd:ee:ff
+root@wlanpi:/home/wlanpi/wlan-client-capability# wlan_client_capability.py -c wlan0 aa:bb:cc:dd:ee:ff
 
 ```
 
 ```
 # capture frame for next client that sends an assocation request frame on interface wlan0
-root@wlanpi:/home/wlanpi/python# wlan-client-capability.py -c wlan0 any
+root@wlanpi:/home/wlanpi/wlan-client-capability# wlan_client_capability.py -c wlan0 any
 
 ```
 
 ```
 # read last assocation req frame captured by script (pcap file created automaticlaly each time script is run)
-root@wlanpi:/home/wlanpi/python# wlan-client-capability.py -f last_frame.pcap
+root@wlanpi:/home/wlanpi/wlan-client-capability# wlan_client_capability.py -f last_frame.pcap
 ```
 
 ## Screenshot
